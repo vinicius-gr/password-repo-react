@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "Validator": "^1.0.5",
+    "axios": "^0.18.0",
     "prop-types": "^15.6.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
@@ -12,14 +13,13 @@
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.4",
     "redux": "^4.0.0",
+    "redux-devtools-extension": "^2.13.5",
     "redux-thunk": "^2.3.0",
     "semantic-ui-css": "^2.3.3",
-    "redux-devtools-extension": "^2.13.5",
     "semantic-ui-react": "^0.82.2",
     "validator": "^10.6.0"
   },
-  "devDependencies":{    
-  },
+  "devDependencies": {},
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

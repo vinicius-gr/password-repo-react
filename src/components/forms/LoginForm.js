@@ -30,8 +30,8 @@ class LoginForm extends React.Component{
 
     validate = (data) => {
         const errors = {};
-        if(!data.password) errors.password = "Preencha a sua senha.";
-        if(!isEmail(data.email)) errors.email = "Email inválido."
+        if(!data.password) errors.password = "Please, fill in your password.";
+        if(!isEmail(data.email)) errors.email = "Please, check your email and try again."
         return errors;
     }
 
@@ -41,29 +41,37 @@ class LoginForm extends React.Component{
             <Form onSubmit={ this.onSubmit }>
                 <Form.Field error={!!errors.email}>
                     <label htmlFor="email">Email</label>
-                    <input 
-                        type="email" 
-                        id="email" 
-                        name="email" 
-                        placeholder="email@email.com" 
-                        value={data.email}
-                        onChange={this.onChange}
-                    />
+                    <div class="ui left icon input">
+                        <i class="user icon"></i>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            placeholder="email@email.com" 
+                            value={data.email}
+                            onChange={this.onChange}
+                        />
+                    </div>                    
                     {errors.email && <InlineError text={errors.email}/>}
                 </Form.Field> 
                 <Form.Field error={!!errors.password}>
                     <label htmlFor="password">Senha</label>
-                    <input 
-                        type="password" 
-                        id="password" 
-                        name="password" 
-                        placeholder="Sua senha" 
-                        value={data.password}
-                        onChange={this.onChange}
-                    />
+                    <div class="ui left icon input">
+                        <i class="lock icon"></i>
+                        <input 
+                            type="password" 
+                            id="password" 
+                            name="password" 
+                            placeholder="Your password" 
+                            value={data.password}
+                            onChange={this.onChange}
+                        />
+                    </div>
+                   
                     {errors.password && <InlineError text={errors.password}/>}
                 </Form.Field>                        
                 <Button primary>Entrar</Button>
+                <a style={{float: 'right'}} href="#" class="right aligned">Damn, I forgot my password again!</a>
             </Form>
         );
     }
